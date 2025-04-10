@@ -1,0 +1,169 @@
+@import "../../../assets/styles/mixins";
+.footer {
+    padding: 80px 0;
+    background: #002269;
+    @include respond-to(tablet) {
+        padding: 50px 0;
+    }
+    &-in {
+        @include flex-between;
+        align-items: stretch;
+        gap: 50px;
+        @include respond-to(tablet) {
+            gap: 20px;
+        }
+        @media (max-width: 600px) {
+            flex-direction: column;
+        }
+        .footer-nav {
+            max-width: 1010px;
+            width: 100%;
+            @include respond-to(large) {
+                max-width: 665px;
+            }
+            &__list {
+                @include flex-between;
+                gap: 20px;
+                margin-bottom: 57px;
+                @include respond-to(large) {
+                    margin-bottom: 17px;
+                }
+                @include respond-to(tablet) {
+                    gap: 10px;
+                }
+                @media (max-width: 600px) {
+                    flex-direction: column;
+                }
+                .list-item {
+                    @media (max-width: 600px) {
+                        width: 100%;
+                        display: grid;
+                        grid-template-columns: repeat(2, 1fr);
+                        gap: 30px;
+                    }
+                    .nav-link {
+                        display: block;
+                        margin-bottom: 12px;
+                        font-family: var(--second-family);
+                        font-weight: 600;
+                        font-size: 24px;
+                        line-height: 28px;
+                        color: #fff;
+                        transition: 0.2s;
+                        @include respond-to(large) {
+                            &:first-child {
+                                margin-bottom: 20px;
+                            }
+                            font-size: 16px;
+                            line-height: 19px;
+                        }
+                        @media (max-width: 600px) {
+                            display: block;
+                            width: 100%;
+                            text-align: left;
+                        }
+                        &:hover {
+                            color: #007dfe;
+                        }
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+            }
+            .privacy-policy {
+                font-family: var(--second-family);
+                font-weight: 500;
+                font-size: 24px;
+                color: #fff;
+                @include respond-to(large) {
+                    font-size: 16px;
+                }
+                @media (max-width: 600px) {
+                    display: none;
+                }
+            }
+        }
+        .right-block {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            @include respond-to(large) {
+                padding-bottom: 15px;
+            }
+            @media (max-width: 600px) {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+            .logo {
+                margin-bottom: 20px;
+                @media (max-width: 600px) {
+                    margin-bottom: 0;
+                }
+                img {
+                    width: 220px;
+                    @include respond-to(large) {
+                        width: 145px;
+                    }
+                    @media (max-width: 600px) {
+                        width: 125px;
+                    }
+                }
+            }
+            .phone-number {
+                display: block;
+                margin-bottom: 18px;
+                white-space: nowrap;
+                font-family: var(--font-family);
+                font-weight: 600;
+                font-size: 24px;
+                line-height: 115%;
+                letter-spacing: 0.02em;
+                text-transform: uppercase;
+                text-align: right;
+                color: #fff;
+                transition: 0.2s;
+                @include respond-to(large) {
+                    font-size: 16px;
+                    line-height: 115%;
+                }
+                @media (max-width: 600px) {
+                    text-align: left;
+                    margin-bottom: 0;
+                    letter-spacing: -0.8px;
+                }
+                &:hover {
+                    color: #007dfe;
+                }
+            }
+            .sayt {
+                display: flex;
+                align-items: center;
+                justify-content: end;
+                gap: 10px;
+                white-space: nowrap;
+                font-family: var(--font3);
+                font-weight: 400;
+                font-size: 24px;
+                text-align: end;
+                color: #fff;
+                @include respond-to(large) {
+                    display: none;
+                }
+            }
+            .privacy-policy {
+                grid-row: span 2;
+                display: none;
+                font-family: var(--second-family);
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 109%;
+                color: #fff;
+                @media (max-width: 600px) {
+                    display: block;
+                }
+            }
+        }
+    }
+}

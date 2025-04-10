@@ -1,0 +1,80 @@
+@import "../../../assets/styles/mixins.scss";
+.nav-bar {
+    display: block;
+    max-width: 277px;
+    min-width: 277px;
+    width: 100%;
+    padding-bottom: 50px;
+    position: sticky;
+    top: 30px;
+    @include respond-to(large) {
+        display: none;
+    }
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        .list-item {
+            .nav-bar__accordion {
+                .nav-bar__link,
+                .accordion-btn {
+                    font-family: var(--second-family);
+                    font-weight: 600;
+                    font-size: 16px;
+                    line-height: 100%;
+                    color: #000;
+                }
+                .accordion-btn {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    cursor: pointer;
+                    &.active {
+                        color: #007dfe;
+                        .arrow-icon {
+                            transform: rotate(-180deg);
+                            img {
+                                filter: brightness(0) saturate(100%) invert(29%) sepia(72%) saturate(2728%)
+                                    hue-rotate(199deg) brightness(103%) contrast(105%);
+                            }
+                        }
+                    }
+                    .arrow-icon {
+                        transition: 0.3s;
+                        img {
+                            height: 7px;
+                            filter: brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(32%) hue-rotate(291deg)
+                                brightness(97%) contrast(100%);
+                            transition: 0.3s;
+                        }
+                    }
+                }
+                .accordion-body {
+                    height: 0;
+                    overflow: hidden;
+                    transition: 0.3s;
+                    &.show {
+                        height: 100%;
+                    }
+                    .menu-list {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 7px;
+                        padding: 10px 0;
+                        .nav-bar__link {
+                            font-family: var(--second-family);
+                            font-weight: 400;
+                            font-size: 14px;
+                            line-height: 100%;
+                            color: #000;
+                            transition: 0.2s;
+                            &:hover {
+                                color: #007dfe;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

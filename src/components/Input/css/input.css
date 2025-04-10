@@ -1,0 +1,49 @@
+.form-control__wrapper .form-control {
+  margin-bottom: 44px;
+}
+.form-control__wrapper .form-control .label {
+  display: block;
+  margin-bottom: 18px;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 42px;
+  letter-spacing: -0.01em;
+  color: #000;
+}
+@media (max-width: 576px) {
+  .form-control__wrapper .form-control .label {
+    line-height: 28px;
+    margin-bottom: 0;
+  }
+}
+.form-control__wrapper .form-control .form-input {
+  width: 100%;
+  height: 38px;
+  border-bottom: 1px solid #002269;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 160%;
+  letter-spacing: -0.01em;
+  color: #000;
+}
+.form-control__wrapper .form-control .form-input:focus {
+  outline: none;
+}
+.form-control__wrapper .form-control .form-input::-moz-placeholder {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 160%;
+  letter-spacing: -0.01em;
+  color: rgba(0, 0, 0, 0.5);
+}
+.form-control__wrapper .form-control .form-input::placeholder {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 160%;
+  letter-spacing: -0.01em;
+  color: rgba(0, 0, 0, 0.5);
+}/*# sourceMappingURL=input.css.map */

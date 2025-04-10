@@ -1,0 +1,382 @@
+@import "../../../assets/styles/mixins.scss";
+.contact-us-btn {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 9px 14px;
+    cursor: pointer;
+    border: 2px solid #94d227;
+    border-radius: 28px;
+    font-family: var(--second-family);
+    font-weight: 600;
+    font-size: 16px;
+    color: #94d227;
+    transition: 0.2s;
+    @include respond-to(phone) {
+        padding: 7px 15px;
+    }
+    &:hover {
+        border-color: #007dfe;
+        color: #007dfe;
+        .arrow-icon {
+            svg {
+                path {
+                    fill: #007dfe;
+                }
+            }
+        }
+    }
+    .arrow-icon {
+        line-height: 0;
+        svg {
+            path {
+                transition: 0.2s;
+            }
+        }
+    }
+}
+.product-page {
+    padding: 0 0 115px 25px;
+    border-left: 1px solid #002269;
+    overflow: hidden;
+    @include respond-to(large) {
+        padding: 0;
+        border: 0;
+        padding-bottom: 210px;
+        margin-right: -30px;
+    }
+    @include respond-to(tablet) {
+        padding-bottom: 190px;
+    }
+    @include respond-to(phone) {
+        width: calc(100% + 20px);
+        padding-bottom: 20px;
+    }
+    .page-head {
+        display: none;
+        align-items: center;
+        gap: 5px;
+        margin-bottom: 25px;
+        font-family: var(--second-family);
+        font-weight: 400;
+        font-size: 14px;
+        letter-spacing: -0.03em;
+        color: #313a66;
+        @include respond-to(large) {
+            display: flex;
+        }
+        &__link {
+            color: #313a66;
+        }
+    }
+    &__header {
+        margin-bottom: 70px;
+        @include respond-to(phone) {
+            margin-bottom: 30px;
+        }
+        .page-title {
+            font-family: var(--font-family);
+            font-weight: 700;
+            font-size: 96px;
+            line-height: 103%;
+            text-transform: uppercase;
+            color: #002269;
+            @include respond-to(xlarge) {
+                font-size: 64px;
+            }
+            @include respond-to(phone) {
+                font-size: 32px;
+            }
+        }
+    }
+    .swiper-pagination {
+        bottom: 13px;
+        line-height: 0;
+        @include respond-to(phone) {
+            display: none;
+        }
+        .swiper-pagination-bullet {
+            width: 15px;
+            height: 15px;
+            background-color: #d9d9d9;
+            opacity: 1;
+            &.swiper-pagination-bullet-active {
+                background-color: #f1efef;
+            }
+        }
+    }
+    .product-wrapper {
+        margin-bottom: 90px;
+        @include respond-to(large) {
+            margin-bottom: 60px;
+        }
+        @include respond-to(phone) {
+            display: block;
+            margin-bottom: 20px;
+            padding-right: 20px;
+        }
+        .product-list {
+            padding-bottom: 50px;
+            @include respond-to(xlarge) {
+                gap: 20px;
+            }
+            @include respond-to(large) {
+                padding-bottom: 60px;
+                padding-right: 30px;
+            }
+            @include respond-to(tablet) {
+                padding-bottom: 80px;
+            }
+            @include respond-to(phone) {
+                padding: 0 0 30px;
+            }
+            .swiper-wrapper {
+                align-items: stretch !important;
+                height: 100% !important;
+                @include respond-to(phone) {
+                    width: 100%;
+                    flex-direction: column;
+                    transform: translate3d(0, 0, 0) !important;
+                    gap: 14px;
+                }
+            }
+            .card-item {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                min-height: 100%;
+                border: 1px solid #000;
+                border-radius: 30px;
+                padding: 45px 30px 60px;
+                transition: 0.3s;
+                @include respond-to(xlarge) {
+                    padding: 25px 15px 30px;
+                }
+                @include respond-to(phone) {
+                    width: 100% !important;
+                    padding: 20px 15px 25px;
+                    border-radius: 20px;
+                    margin: 0 !important;
+                }
+                .card-body {
+                    flex: 1 1 100%;
+                }
+                .card-title {
+                    min-height: 72px;
+                    margin-bottom: 6px;
+                    font-family: var(--font-family);
+                    font-weight: 500;
+                    font-size: 24px;
+                    line-height: 100%;
+                    color: #000;
+                    @include respond-to(xlarge) {
+                        font-size: 22px;
+                    }
+                    @include respond-to(phone) {
+                        min-height: 60px;
+                        margin-bottom: 10px;
+                        font-size: 20px;
+                    }
+                }
+                .product-links {
+                    margin-bottom: 35px;
+                    @include respond-to(large) {
+                        margin-bottom: 20px;
+                    }
+                    @include respond-to(phone) {
+                        margin-bottom: 15px;
+                    }
+                    .product-link {
+                        font-family: var(--font-family);
+                        font-weight: 500;
+                        font-size: 16px;
+                        line-height: 143%;
+                        letter-spacing: -0.02em;
+                        color: #000;
+                        transition: 0.2s;
+                        @include respond-to(xlarge) {
+                            font-size: 14px;
+                        }
+                        @include respond-to(large) {
+                            letter-spacing: -0.03em;
+                        }
+                        @include respond-to(phone) {
+                            font-size: 15px;
+                            line-height: 143%;
+                        }
+                        &:hover {
+                            color: #007dfe;
+                        }
+                    }
+                }
+                .button-ecoil {
+                    max-width: 197px;
+                    width: 100%;
+                    padding: 12px 0;
+                    font-weight: 500;
+                    font-size: 24px;
+                    text-transform: capitalize;
+                    text-align: center;
+                    @include respond-to(phone) {
+                        max-width: 100%;
+                        width: 100%;
+                        padding: 11px 0;
+                        border-radius: 30px;
+                    }
+                }
+            }
+        }
+    }
+    .certificates {
+        &-title {
+            margin-bottom: 40px;
+            font-family: var(--font-family);
+            font-weight: 700;
+            font-size: 64px;
+            text-transform: uppercase;
+            color: #002269;
+            @include respond-to(phone) {
+                margin-bottom: 30px;
+                font-size: 32px;
+                line-height: 103%;
+            }
+        }
+        .swiper-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            .certificates-slider {
+                width: calc(100% - 64px);
+                margin: 0;
+                @include respond-to(large) {
+                    width: 100%;
+                    padding-bottom: 45px;
+                }
+                @include respond-to(phone) {
+                    width: calc(100% + 40px);
+                }
+                .swiper-slide {
+                    &.swiper-slide-active {
+                        img {
+                            opacity: 0.6;
+                        }
+                    }
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+            }
+            .swiper-pagination {
+                bottom: 0;
+            }
+            .swiper-button-next {
+                width: 44px;
+                height: 44px;
+                cursor: pointer;
+                @include flex-center;
+                border-radius: 50%;
+                background-color: #94d227;
+                @include respond-to(large) {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+.product-detail {
+    padding: 0 0 115px 25px;
+    border-left: 1px solid #002269;
+    overflow: hidden;
+    @include respond-to(large) {
+        padding: 0;
+        border: 0;
+        padding-bottom: 210px;
+    }
+    @include respond-to(tablet) {
+        padding-bottom: 190px;
+    }
+    @include respond-to(phone) {
+        padding-bottom: 20px;
+    }
+    &__header {
+        .page-title {
+            max-width: 968px;
+            margin-bottom: 50px;
+            font-family: var(--font-family);
+            font-weight: 700;
+            font-size: 48px;
+            line-height: 103%;
+            text-transform: uppercase;
+            color: #002269;
+            @include respond-to(large) {
+                margin-bottom: 32px;
+            }
+            @include respond-to(phone) {
+                margin-bottom: 16px;
+                font-size: 32px;
+            }
+        }
+    }
+    .product-info {
+        margin-bottom: 60px;
+        @include respond-to(tablet) {
+            margin-bottom: 40px;
+        }
+        @include respond-to(phone) {
+            margin-bottom: 15px;
+        }
+        &__item {
+            .product-title {
+                cursor: pointer;
+                font-family: var(--font-family);
+                font-weight: 500;
+                font-size: 40px;
+                line-height: 143%;
+                color: #000;
+                @include respond-to(phone) {
+                    font-size: 24px;
+                }
+            }
+            .product-info__body {
+                &-in {
+                    padding: 25px 0 45px 150px;
+                    @include respond-to(large) {
+                        padding: 28px 0 28px 120px;
+                    }
+                    @include respond-to(phone) {
+                        padding: 5px 0 10px;
+                    }
+                    .product-description {
+                        margin-bottom: 22px;
+                        font-family: var(--font-family);
+                        font-weight: 500;
+                        font-size: 24px;
+                        line-height: 143%;
+                        color: #000;
+                        @include respond-to(phone) {
+                            margin-bottom: 10px;
+                            font-size: 16px;
+                        }
+                    }
+                    .product-grade {
+                        font-family: var(--font-family);
+                        font-weight: 500;
+                        font-size: 32px;
+                        line-height: 143%;
+                        color: #007dfe;
+                        @include respond-to(phone) {
+                            font-size: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .contact-us-btn {
+        @include respond-to(phone) {
+            float: inline-end;
+        }
+    }
+}

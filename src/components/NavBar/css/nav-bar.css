@@ -1,0 +1,75 @@
+.nav-bar {
+  display: block;
+  max-width: 277px;
+  min-width: 277px;
+  width: 100%;
+  padding-bottom: 50px;
+  position: sticky;
+  top: 30px;
+}
+@media (max-width: 1024px) {
+  .nav-bar {
+    display: none;
+  }
+}
+.nav-bar__list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.nav-bar__list .list-item .nav-bar__accordion .nav-bar__link,
+.nav-bar__list .list-item .nav-bar__accordion .accordion-btn {
+  font-family: var(--second-family);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+  color: #000;
+}
+.nav-bar__list .list-item .nav-bar__accordion .accordion-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+.nav-bar__list .list-item .nav-bar__accordion .accordion-btn.active {
+  color: #007dfe;
+}
+.nav-bar__list .list-item .nav-bar__accordion .accordion-btn.active .arrow-icon {
+  transform: rotate(-180deg);
+}
+.nav-bar__list .list-item .nav-bar__accordion .accordion-btn.active .arrow-icon img {
+  filter: brightness(0) saturate(100%) invert(29%) sepia(72%) saturate(2728%) hue-rotate(199deg) brightness(103%) contrast(105%);
+}
+.nav-bar__list .list-item .nav-bar__accordion .accordion-btn .arrow-icon {
+  transition: 0.3s;
+}
+.nav-bar__list .list-item .nav-bar__accordion .accordion-btn .arrow-icon img {
+  height: 7px;
+  filter: brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(32%) hue-rotate(291deg) brightness(97%) contrast(100%);
+  transition: 0.3s;
+}
+.nav-bar__list .list-item .nav-bar__accordion .accordion-body {
+  height: 0;
+  overflow: hidden;
+  transition: 0.3s;
+}
+.nav-bar__list .list-item .nav-bar__accordion .accordion-body.show {
+  height: 100%;
+}
+.nav-bar__list .list-item .nav-bar__accordion .accordion-body .menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding: 10px 0;
+}
+.nav-bar__list .list-item .nav-bar__accordion .accordion-body .menu-list .nav-bar__link {
+  font-family: var(--second-family);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  color: #000;
+  transition: 0.2s;
+}
+.nav-bar__list .list-item .nav-bar__accordion .accordion-body .menu-list .nav-bar__link:hover {
+  color: #007dfe;
+}/*# sourceMappingURL=nav-bar.css.map */

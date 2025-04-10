@@ -1,0 +1,41 @@
+@import "../../../assets/styles/mixins.scss";
+
+.contact-form {
+    .checkbox-control {
+        display: flex;
+        align-items: start;
+        gap: 30px;
+        margin-bottom: 40px;
+        @include respond-to(phone) {
+            gap: 12px;
+        }
+        .form-chechbox {
+            border: 1px solid #2f2f2f;
+            min-width: 29px;
+            min-height: 29px;
+            @include respond-to(large) {
+                min-width: 20px;
+                min-height: 20px;
+            }
+        }
+        .label {
+            margin-bottom: 0;
+            font-family: var(--font-family);
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 150%;
+            color: #000;
+            user-select: none;
+            @include respond-to(large) {
+                font-size: 14px;
+                line-height: 143%;
+            }
+        }
+    }
+    .button-ecoil {
+        padding: 12px 16px;
+        @include respond-to(phone) {
+            margin-left: 32px;
+        }
+    }
+}

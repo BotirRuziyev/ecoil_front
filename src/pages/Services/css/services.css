@@ -1,0 +1,297 @@
+.services-page {
+  padding-left: 25px;
+  padding-bottom: 115px;
+  border-left: 1px solid #002269;
+}
+@media (max-width: 1024px) {
+  .services-page {
+    padding-bottom: 210px;
+    border: 0;
+    padding: 0;
+  }
+}
+@media (max-width: 768px) {
+  .services-page {
+    padding-bottom: 190px;
+  }
+}
+@media (max-width: 576px) {
+  .services-page {
+    padding-bottom: 20px;
+  }
+}
+.services-page .page-head {
+  display: none;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 25px;
+  font-family: var(--second-family);
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: -0.03em;
+  color: #313a66;
+}
+@media (max-width: 1024px) {
+  .services-page .page-head {
+    display: flex;
+  }
+}
+.services-page .page-head__link {
+  color: #313a66;
+}
+.services-page__header {
+  margin-bottom: 34px;
+}
+@media (max-width: 576px) {
+  .services-page__header {
+    margin-bottom: 12px;
+  }
+}
+.services-page__header .page-title {
+  margin-bottom: 18px;
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 103%;
+  text-transform: uppercase;
+  color: #002269;
+}
+@media (max-width: 576px) {
+  .services-page__header .page-title {
+    margin-bottom: 12px;
+    font-size: 32px;
+  }
+}
+.services-page__header .page-description {
+  max-width: 908px;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 120%;
+  letter-spacing: 0.01em;
+  color: #002269;
+}
+@media (max-width: 576px) {
+  .services-page__header .page-description {
+    font-size: 18px;
+    line-height: 114%;
+  }
+  .services-page__header .page-description span {
+    display: none;
+  }
+}
+.services-page .services-accordion__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-bottom: 45px;
+}
+@media (max-width: 576px) {
+  .services-page .services-accordion__wrapper {
+    gap: 30px;
+    margin-bottom: 30px;
+  }
+}
+.services-page .services-accordion__wrapper .accordion {
+  overflow: hidden;
+  padding: 0 25px;
+  border-radius: 30px;
+  box-shadow: 2px 0 23px 0 rgba(0, 0, 0, 0.13);
+  background: #fff;
+}
+@media (max-width: 576px) {
+  .services-page .services-accordion__wrapper .accordion {
+    border-radius: 10px;
+    box-shadow: 2px 0 23px 0 rgba(0, 0, 0, 0.13);
+    padding: 0 14px;
+  }
+}
+.services-page .services-accordion__wrapper .accordion:nth-child(2) .accordion-body__in .accordion-text .body-list {
+  padding-left: 40px;
+}
+.services-page .services-accordion__wrapper .accordion:nth-child(2) .accordion-body__in .accordion-text .body-list .list-item {
+  padding-left: 10px;
+  list-style: decimal;
+}
+.services-page .services-accordion__wrapper .accordion:nth-child(2) .accordion-body__in .accordion-text .body-list .list-item::marker {
+  font-size: 22px;
+}
+.services-page .services-accordion__wrapper .accordion.show .accordion-btn {
+  color: #000;
+}
+.services-page .services-accordion__wrapper .accordion.show .accordion-btn .arrow-icon {
+  transform: rotate(-180deg);
+}
+.services-page .services-accordion__wrapper .accordion .accordion-btn {
+  width: 100%;
+  min-height: 128px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+  cursor: pointer;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 30px;
+  text-align: left;
+  line-height: 133%;
+  color: #007dfe;
+  transition: 0.3s;
+}
+@media (max-width: 1024px) {
+  .services-page .services-accordion__wrapper .accordion .accordion-btn {
+    min-height: 170px;
+    gap: 20px;
+    font-size: 32px;
+    line-height: 125%;
+  }
+}
+@media (max-width: 768px) {
+  .services-page .services-accordion__wrapper .accordion .accordion-btn {
+    font-size: 28px;
+    line-height: 143%;
+  }
+}
+@media (max-width: 576px) {
+  .services-page .services-accordion__wrapper .accordion .accordion-btn {
+    min-height: 100px;
+    padding: 13px 0;
+    font-size: 16px;
+    line-height: 125%;
+  }
+}
+.services-page .services-accordion__wrapper .accordion .accordion-btn .arrow-icon {
+  transition: 0.3s;
+}
+@media (max-width: 576px) {
+  .services-page .services-accordion__wrapper .accordion .accordion-btn .arrow-icon svg {
+    height: 12px;
+  }
+}
+.services-page .services-accordion__wrapper .accordion .accordion-body {
+  transition: 0.3s;
+}
+.services-page .services-accordion__wrapper .accordion .accordion-body__in {
+  display: flex;
+  align-items: start;
+  gap: 40px;
+  padding-top: 10px;
+  padding-bottom: 50px;
+}
+@media (max-width: 1024px) {
+  .services-page .services-accordion__wrapper .accordion .accordion-body__in {
+    gap: 20px;
+  }
+}
+@media (max-width: 576px) {
+  .services-page .services-accordion__wrapper .accordion .accordion-body__in {
+    flex-direction: column;
+    gap: 12px;
+    padding-top: 0;
+    padding-bottom: 30px;
+  }
+}
+.services-page .services-accordion__wrapper .accordion .accordion-body__in .accordion-img {
+  flex: 1 1 330px;
+  border-radius: 30px;
+  overflow: hidden;
+}
+@media (max-width: 1024px) {
+  .services-page .services-accordion__wrapper .accordion .accordion-body__in .accordion-img {
+    flex: 1 1 445px;
+  }
+}
+@media (max-width: 576px) {
+  .services-page .services-accordion__wrapper .accordion .accordion-body__in .accordion-img {
+    flex: none;
+    margin: 0 auto;
+  }
+}
+.services-page .services-accordion__wrapper .accordion .accordion-body__in .accordion-img img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.services-page .services-accordion__wrapper .accordion .accordion-body__in .accordion-text {
+  flex: 1 1 712px;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 114%;
+  color: #000;
+}
+@media (max-width: 1024px) {
+  .services-page .services-accordion__wrapper .accordion .accordion-body__in .accordion-text {
+    font-size: 20px;
+    line-height: 125%;
+  }
+}
+@media (max-width: 576px) {
+  .services-page .services-accordion__wrapper .accordion .accordion-body__in .accordion-text {
+    flex: none;
+    font-size: 16px;
+    line-height: 119%;
+  }
+}
+.services-page .services-accordion__wrapper .accordion .accordion-body__in .accordion-text .body-description {
+  margin-bottom: 5px;
+}
+.services-page .services-accordion__wrapper .accordion .accordion-body__in .accordion-text .body-description span {
+  font-weight: 500;
+}
+.services-page .services-accordion__wrapper .accordion .accordion-body__in .accordion-text .doctor-info a {
+  color: #000;
+}
+.services-page .services-accordion__wrapper .accordion .accordion-body__in .accordion-text .doctor-info .user-name,
+.services-page .services-accordion__wrapper .accordion .accordion-body__in .accordion-text .doctor-info .phone-number a {
+  font-weight: 500;
+  color: #000;
+}
+.services-page .services-accordion__wrapper .accordion .accordion-body__in .accordion-text .body-list {
+  padding-left: 30px;
+}
+.services-page .services-accordion__wrapper .accordion .accordion-body__in .accordion-text .body-list li {
+  list-style: disc;
+  padding-left: 10px;
+}
+.services-page .services-accordion__wrapper .accordion .accordion-body__in .accordion-text .body-list li::marker {
+  font-size: 16px;
+}
+@media (max-width: 576px) {
+  .services-page .services-accordion__wrapper .accordion .accordion-body__in .accordion-text .body-list li::marker {
+    font-size: 16px;
+    line-height: 119%;
+  }
+}
+@media (max-width: 576px) {
+  .services-page .services-accordion__wrapper .accordion .accordion-body__in .accordion-text br {
+    display: none;
+  }
+}
+.services-page .contact-us-btn {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 9px 14px;
+  cursor: pointer;
+  border: 2px solid #94d227;
+  border-radius: 28px;
+  font-family: var(--second-family);
+  font-weight: 600;
+  font-size: 16px;
+  color: #94d227;
+  transition: 0.2s;
+}
+.services-page .contact-us-btn:hover {
+  border-color: #007dfe;
+  color: #007dfe;
+}
+.services-page .contact-us-btn:hover .arrow-icon svg path {
+  fill: #007dfe;
+}
+.services-page .contact-us-btn .arrow-icon {
+  line-height: 0;
+}
+.services-page .contact-us-btn .arrow-icon svg path {
+  transition: 0.2s;
+}/*# sourceMappingURL=services.css.map */

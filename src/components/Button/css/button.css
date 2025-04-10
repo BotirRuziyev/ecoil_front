@@ -1,0 +1,28 @@
+.button-ecoil {
+  background: #94d227;
+  padding: 6px 35px;
+  border-radius: 28px;
+  cursor: pointer;
+  font-family: var(--second-family);
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 25px;
+  text-align: center;
+  color: #fff;
+  transition: 0.2s;
+}
+.button-ecoil:hover {
+  background-color: #007dfe;
+}
+@media (max-width: 1200px) {
+  .button-ecoil {
+    padding: 5px 25px;
+  }
+}
+@media (max-width: 1024px) {
+  .button-ecoil {
+    padding: 2px 15px;
+    font-size: 16px;
+    line-height: 21px;
+  }
+}/*# sourceMappingURL=button.css.map */
