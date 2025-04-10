@@ -10,10 +10,12 @@ const ContactModal = ({ isOpen, close }) => {
         <button className="close-btn" onClick={close}>
           <img src={CloseIcon} alt="" />
         </button>
-        <div className="modal-header">
-          <h2 className="modal-title">
-            мы перезвоним и ответим на ваши вопросы
-          </h2>
+        <div className="modal-content__in">
+          <div className="modal-header">
+            <h2 className="modal-title">
+              мы перезвоним и ответим на ваши вопросы
+            </h2>
+          </div>
           <ContactForm />
         </div>
       </div>

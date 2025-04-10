@@ -26,14 +26,19 @@
         max-width: 716px;
         width: 100%;
         max-height: calc(100% - 100px);
-        overflow-y: auto;
-        padding: 50px 120px 50px 50px;
+        display: flex;
+        flex-direction: column;
         box-shadow: 2px 0 23px 0 rgba(0, 0, 0, 0.13);
         background: #fff;
         border-radius: 30px;
         position: relative;
         transform: translateY(100%);
         transition: 0.3s;
+        @include respond-to(phone) {
+            max-height: calc(100% - 20px);
+            border-radius: 20px;
+        }
+
         .close-btn {
             width: 40px;
             height: 40px;
@@ -42,6 +47,15 @@
             position: absolute;
             top: 30px;
             right: 45px;
+            @include respond-to(phone) {
+                width: 20px;
+                height: 20px;
+                top: 12px;
+                right: 9px;
+                img {
+                    height: 12px;
+                }
+            }
             &:hover {
                 img {
                     filter: brightness(0) saturate(100%) invert(40%) sepia(92%) saturate(4911%) hue-rotate(200deg)
@@ -49,14 +63,70 @@
                 }
             }
         }
+        &__in {
+            height: 100%;
+            overflow-y: auto;
+            padding: 50px 120px 50px 50px;
+            &::-webkit-scrollbar {
+                width: 0;
+            }
+            @include respond-to(phone) {
+                padding: 35px 25px;
+            }
+        }
         .modal-header {
             margin-bottom: 15px;
+            @include respond-to(phone) {
+                margin-bottom: 7px;
+            }
             .modal-title {
                 font-family: var(--font-family);
                 font-weight: 700;
                 font-size: 32px;
                 text-transform: uppercase;
                 color: #007dfe;
+                @include respond-to(phone) {
+                    font-size: 16px;
+                }
+            }
+        }
+        .contact-form {
+            .form-control__wrapper {
+                @include respond-to(phone) {
+                    &:nth-child(3) {
+                        margin-bottom: 30px;
+                    }
+                    .form-control {
+                        margin-bottom: 3px;
+                        .label {
+                            margin-bottom: 3px;
+                            font-size: 16px;
+                            line-height: 32px;
+                        }
+                        .form-input {
+                            font-size: 16px;
+                            &::placeholder {
+                                font-size: 16px;
+                            }
+                        }
+                    }
+                }
+            }
+            .checkbox-control {
+                @include respond-to(phone) {
+                    margin-bottom: 16px;
+                    &:nth-child(5) {
+                        margin-bottom: 35px;
+                    }
+                }
+            }
+            .button-ecoil {
+                @include respond-to(phone) {
+                    display: block;
+                    width: 100%;
+                    padding: 14.5px 15px;
+                    margin-left: 0;
+                }
             }
         }
     }
