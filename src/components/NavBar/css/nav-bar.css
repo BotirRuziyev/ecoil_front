@@ -6,8 +6,33 @@
   padding-bottom: 50px;
   position: sticky;
   top: 30px;
+  z-index: 2;
 }
 @media (max-width: 1024px) {
+  .nav-bar {
+    max-width: 100%;
+    width: 100%;
+    height: calc(100vh - 140px);
+    position: fixed;
+    top: 140px;
+    left: 0;
+    padding: 40px 30px;
+    -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(20px);
+    overflow-y: auto;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+  }
+  .nav-bar.show {
+    opacity: 1;
+    visibility: visible;
+  }
+  .nav-bar::-webkit-scrollbar {
+    width: 0;
+  }
+}
+@media (max-width: 992px) {
   .nav-bar {
     display: none;
   }

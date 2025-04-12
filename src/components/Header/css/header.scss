@@ -142,6 +142,9 @@
                     gap: 14px;
                 }
                 .logo {
+                    .logo-link {
+                        display: block;
+                    }
                     img {
                         @media (max-width: 1300px) {
                             width: 165px;
@@ -174,6 +177,11 @@
                 gap: 14px;
                 @media (max-width: 1300px) {
                     gap: 10px;
+                }
+                @include respond-to(phone) {
+                    &.active {
+                        gap: 5px;
+                    }
                 }
                 .header-search {
                     display: none;
@@ -266,6 +274,7 @@
                     }
                     @include respond-to(desktop) {
                         width: 188px;
+                        transition: 0.3s;
                         &.hidden {
                             width: 0;
                             overflow: hidden;
@@ -292,6 +301,16 @@
                 }
                 .header-lang {
                     position: relative;
+                    @media (max-width: 450px) {
+                        width: 20px;
+                        overflow: hidden;
+                        transition: 0.3s;
+                        &.hidden {
+                            width: 0;
+                            opacity: 0;
+                            visibility: hidden;
+                        }
+                    }
                     .lang-btn {
                         display: none;
                         transition: 0.3s;
@@ -331,12 +350,6 @@
                             display: flex;
                             align-items: center;
                             gap: 5px;
-                        }
-                        @media (max-width: 450px) {
-                            &.hidden {
-                                width: 0;
-                                overflow: hidden;
-                            }
                         }
                     }
                     .lang-menu {
@@ -491,6 +504,10 @@
                             display: block;
                         }
                     }
+                    .service-item,
+                    .product-item {
+                        display: none;
+                    }
                     .dropdown {
                         position: relative;
                         padding-bottom: 15px;
@@ -514,10 +531,13 @@
                             gap: 12px;
                             cursor: pointer;
                             font-family: var(--second-family);
-                            font-weight: 700;
+                            font-weight: 600;
                             font-size: 24px;
                             color: #fff;
                             transition: 0.2s;
+                            &.active {
+                                font-weight: 700;
+                            }
                             @media (max-width: 1300px) {
                                 font-size: 16px;
                                 gap: 5px;
@@ -536,11 +556,6 @@
                                         filter: brightness(0) saturate(100%) invert(42%) sepia(85%) saturate(4841%)
                                             hue-rotate(198deg) brightness(101%) contrast(105%);
                                     }
-                                }
-                            }
-                            &.active {
-                                .arrow-icon {
-                                    transform: rotate(-180deg);
                                 }
                             }
                             .arrow-icon {
@@ -790,6 +805,130 @@
                                         }
                                     }
                                 }
+                            }
+                        }
+                    }
+                }
+                .burger-btn {
+                    display: none;
+                    padding-bottom: 15px;
+                    a {
+                        display: block;
+                    }
+                    img {
+                        filter: brightness(0) saturate(100%) invert(0%) sepia(83%) saturate(7483%) hue-rotate(199deg)
+                            brightness(103%) contrast(94%);
+                    }
+                    @include respond-to(large) {
+                        display: block;
+                    }
+                    @include respond-to(desktop) {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+    &.product-header {
+        .header-in {
+            .header-bottom {
+                position: relative;
+                @include respond-to(large) {
+                    position: static;
+                }
+                &::after {
+                    content: "";
+                    width: 100%;
+                    height: 0;
+                    border-bottom: 1px solid rgba(0, 34, 105, 0.5);
+                    position: absolute;
+                    top: 53px;
+                    left: 0;
+                    @include respond-to(large) {
+                        display: none;
+                    }
+                }
+                .header-nav {
+                    max-width: 1330px;
+                    @media (max-width: 1500px) {
+                        max-width: 1200px;
+                    }
+                    @media (max-width: 1300px) {
+                        max-width: 1000px;
+                    }
+                    .nav-list {
+                        .list-item {
+                            &:nth-child(1),
+                            &:nth-child(2) {
+                                display: none;
+                                @include respond-to(large) {
+                                    display: block;
+                                }
+                            }
+                        }
+                        .service-item,
+                        .product-item {
+                            display: block;
+                            @include respond-to(large) {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+                .header-search {
+                    .form-control {
+                        max-width: 44px;
+                        min-width: 44px;
+                        gap: 0;
+                        border-color: transparent;
+                        padding: 0;
+                        transition: 0.5s;
+                        @include respond-to(large) {
+                            min-width: 195px;
+                            gap: 10px;
+                            border-color: #000;
+                            padding: 0 10px;
+                        }
+                        &:focus-within {
+                            min-width: 195px;
+                            gap: 10px;
+                            border-color: #007dfe;
+                            padding: 0 10px;
+                            .search-btn {
+                                width: 24px;
+                                height: 24px;
+                                img {
+                                    width: 19px;
+                                    height: 19px;
+                                }
+                            }
+                            .form-input {
+                                width: 100%;
+                            }
+                        }
+                        .search-btn {
+                            width: 44px;
+                            height: 44px;
+                            transition: 0.5s;
+                            @include respond-to(large) {
+                                width: 24px;
+                                height: 24px;
+                            }
+                            img {
+                                height: 44px;
+                                width: 44px;
+                                transition: 0.5s;
+                                @include respond-to(large) {
+                                    width: 19px;
+                                    height: 19px;
+                                }
+                            }
+                        }
+                        .form-input {
+                            width: 0;
+                            transition: 0.5s;
+                            @include respond-to(large) {
+                                width: 100%;
                             }
                         }
                     }

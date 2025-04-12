@@ -33,7 +33,7 @@
   background: #fff;
   border-radius: 30px;
   position: relative;
-  transform: translateY(100%);
+  transform: translateY(100px);
   transition: 0.3s;
 }
 @media (max-width: 576px) {

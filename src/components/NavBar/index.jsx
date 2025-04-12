@@ -3,7 +3,7 @@ import arrowIcon from "@/assets/img/icons/dropdown-arrow.svg";
 import { Link } from "react-router-dom";
 import "./css/nav-bar.css";
 
-const NavBar = () => {
+const NavBar = ({ openBar }) => {
   const [barList, setBarList] = useState([
     {
       id: 1,
@@ -209,7 +209,7 @@ const NavBar = () => {
     );
   };
   return (
-    <nav className="nav-bar">
+    <nav className={"nav-bar " + (openBar ? "show" : "")}>
       <ul className="nav-bar__list">
         {barList.map((item, index) => {
           return (

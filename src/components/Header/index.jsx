@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import logo from "@/assets/img/icons/logo.svg";
 import logoBlue from "@/assets/img/icons/logo-blue.svg";
 import arrow from "@/assets/img/icons/dropdown-arrow.svg";
@@ -7,13 +7,19 @@ import search from "@/assets/img/icons/search.svg";
 import burger from "@/assets/img/icons/burger-menu.svg";
 import "./css/header.css";
 
-const Header = ({ addClass }) => {
+const Header = ({ addClass, setOpenBar, isOpenBar }) => {
+  const location = useLocation();
+  const isServices = location.pathname.startsWith("/services");
+  const isProduct = location.pathname.startsWith("/product");
   const [langOpen, setLang] = useState(false);
   const [navOpen, setNav] = useState(false);
   const [searchOpen, setSearch] = useState(false);
   const searchRef = useRef(null);
   const openMenu = () => {
     setNav(!navOpen);
+  };
+  const openBar = () => {
+    setOpenBar((open) => !open);
   };
   const langSelected = () => {
     setLang(!langOpen);
@@ -27,7 +33,7 @@ const Header = ({ addClass }) => {
     }
   };
   useEffect(() => {
-    if (navOpen) {
+    if (navOpen || isOpenBar) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "visible";
@@ -36,7 +42,7 @@ const Header = ({ addClass }) => {
     return () => {
       document.body.style.overflow = "visible";
     };
-  }, [navOpen]);
+  }, [navOpen, isOpenBar]);
 
   useEffect(() => {
     document.addEventListener("mousedown", clickOutside);
@@ -46,7 +52,14 @@ const Header = ({ addClass }) => {
     };
   }, []);
   return (
-    <header className={"header " + (navOpen ? "show " : "") + addClass}>
+    <header
+      className={
+        "header " +
+        (navOpen ? "show " : "") +
+        (isProduct ? "product-header " : "") +
+        addClass
+      }
+    >
       <div className="main-container">
         <div className="header-in">
           <div className="header-head">
@@ -66,7 +79,9 @@ const Header = ({ addClass }) => {
                 Промышленные и нефтепромысловые химические реагенты
               </p>
             </div>
-            <div className="header-right__block">
+            <div
+              className={"header-right__block " + (searchOpen ? "active" : "")}
+            >
               <div className="header-contact">
                 <a href="tel:+73472163015" className="phone-number">
                   +7 (347) 216-30-15
@@ -109,13 +124,9 @@ const Header = ({ addClass }) => {
                   </svg>
                 </span>
               </button>
-              <div className="header-lang">
+              <div className={"header-lang " + (searchOpen ? "hidden" : "")}>
                 <button
-                  className={
-                    "lang-btn " +
-                    (langOpen ? "active" : "") +
-                    (searchOpen ? "hidden" : "")
-                  }
+                  className={"lang-btn " + (langOpen ? "active" : "")}
                   onClick={langSelected}
                 >
                   <span className="lang-value">ru</span>
@@ -153,7 +164,9 @@ const Header = ({ addClass }) => {
               <ul className="nav-list">
                 <li className="list-item">
                   <div className="dropdown">
-                    <button className="dropdown-btn">
+                    <button
+                      className={"dropdown-btn " + (isServices ? "active" : "")}
+                    >
                       Услуги
                       <span className="arrow-icon">
                         <img src={arrow} alt="" />
@@ -180,7 +193,9 @@ const Header = ({ addClass }) => {
                 </li>
                 <li className="list-item">
                   <div className="dropdown">
-                    <button className="dropdown-btn">
+                    <button
+                      className={"dropdown-btn " + (isProduct ? "active" : "")}
+                    >
                       Продукция
                       <span className="arrow-icon">
                         <img src={arrow} alt="" />
@@ -204,6 +219,16 @@ const Header = ({ addClass }) => {
                       </li>
                     </ul>
                   </div>
+                </li>
+                <li className="nav-item service-item">
+                  <Link to={"#"} className="nav-link">
+                    Услуги
+                  </Link>
+                </li>
+                <li className="nav-item product-item">
+                  <Link to={"#"} className="nav-link">
+                    Продукция
+                  </Link>
                 </li>
                 <li className="nav-item">
                   <Link to={"#"} className="nav-link">
@@ -240,7 +265,7 @@ const Header = ({ addClass }) => {
                 </li>
               </ul>
             </nav>
-            <div className="header-search">
+            <div className={"header-search "}>
               <div className="form-control">
                 <button className="search-btn">
                   <img src={search} alt="" />
@@ -252,6 +277,11 @@ const Header = ({ addClass }) => {
                 />
               </div>
             </div>
+            <button className="burger-btn" onClick={openBar}>
+              <a href="#">
+                <img src={burger} alt="" />
+              </a>
+            </button>
           </div>
         </div>
       </div>

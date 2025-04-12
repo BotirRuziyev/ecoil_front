@@ -11,7 +11,7 @@ const Button = ({ text, to }) => {
 };
 Button.defaultProps = {
   text: "",
-  to: "#",
+  to: "",
 };
 
 export default Button;

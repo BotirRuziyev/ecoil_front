@@ -32,6 +32,10 @@ body {
   background: #fff;
 }
 
+.app-container {
+  min-height: 100vh;
+}
+
 .inner-pages {
   max-width: 1520px;
   width: 100%;
