@@ -39,7 +39,7 @@
                 @include respond-to(large) {
                     font-size: 62px;
                 }
-                @media (max-width: 1015px) {
+                @media (max-width: 1061px) {
                     font-size: 46px;
                 }
                 @media (max-width: 760px) {
@@ -59,7 +59,7 @@
                 @include respond-to(large) {
                     padding-left: 480px;
                 }
-                @media (max-width: 1015px) {
+                @media (max-width: 1061px) {
                     padding-left: 350px;
                     margin-top: -42px;
                 }

@@ -1,9 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ContactForm from "../ContactForm";
 import "./css/contact-modal.css";
 import CloseIcon from "@/assets/img/icons/close.svg";
 
 const ContactModal = ({ isOpen, close }) => {
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "visible";
+    }
+
+    return () => {
+      document.body.style.overflow = "visible";
+    };
+  }, [isOpen]);
   return (
     <div className={"contact-modal " + (isOpen ? "show" : "")}>
       <div className="modal-content">

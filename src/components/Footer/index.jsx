@@ -12,7 +12,7 @@ const Footer = () => {
           <nav className="footer-nav">
             <ul className="footer-nav__list">
               <li className="list-item">
-                <Link to="#" className="nav-link">
+                <Link to="/services" className="nav-link">
                   Услуги
                 </Link>
                 <Link to="#" className="nav-link">
@@ -20,12 +20,12 @@ const Footer = () => {
                 </Link>
               </li>
               <li className="list-item">
-                <Link to="#" className="nav-link">
+                <Link to="/product" className="nav-link">
                   Продукция
                 </Link>
-                <Link to="#" className="nav-link">
+                <a href="#contact" className="nav-link">
                   Контакты
-                </Link>
+                </a>
               </li>
               <li className="list-item">
                 <Link to="#" className="nav-link">

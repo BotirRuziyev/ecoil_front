@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "../../components/Button";
 import YandexMap from "../../components/YandexMap";
 import ContactForm from "../../components/ContactForm";
@@ -15,8 +15,10 @@ import gazprom1 from "@/assets/img/icons/gazprom1.svg";
 import bashneft from "@/assets/img/icons/bashneft.svg";
 import megion from "@/assets/img/icons/megion.svg";
 import gazprom from "@/assets/img/icons/gazprom.svg";
+import ContactModal from "../../components/ContactModal";
 
 const Home = () => {
+  const [isOpen, setModal] = useState(false);
   const partners = [
     lukoyl,
     tatneft,
@@ -40,7 +42,10 @@ const Home = () => {
                 экологическими требованиями и нанотехнологиями для снижения
                 расходов и повышения эффективности.
               </p>
-              <button className="submit-request__btn">
+              <button
+                className="submit-request__btn"
+                onClick={() => setModal(true)}
+              >
                 <span>Оставить заявку</span>
                 <span className="arrow-icon">
                   <svg
@@ -186,7 +191,7 @@ const Home = () => {
           </section>
         </div>
       </div>
-      <section className="contact">
+      <section id="contact" className="contact">
         <div className="main-container">
           <h2 className="contact-title">контакты</h2>
           <div className="contact-in">
@@ -221,6 +226,7 @@ const Home = () => {
         </div>
       </section>
       <YandexMap />
+      <ContactModal isOpen={isOpen} close={() => setModal(false)} />
     </div>
   );
 };

@@ -221,12 +221,12 @@ const Header = ({ addClass, setOpenBar, isOpenBar }) => {
                   </div>
                 </li>
                 <li className="nav-item service-item">
-                  <Link to={"#"} className="nav-link">
+                  <Link to={"/services"} className="nav-link">
                     Услуги
                   </Link>
                 </li>
                 <li className="nav-item product-item">
-                  <Link to={"#"} className="nav-link">
+                  <Link to={"/product"} className="nav-link">
                     Продукция
                   </Link>
                 </li>
@@ -246,9 +246,9 @@ const Header = ({ addClass, setOpenBar, isOpenBar }) => {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link to={"#"} className="nav-link">
+                  <a href={"#contact"} className="nav-link">
                     Контакты
-                  </Link>
+                  </a>
                 </li>
                 <li className="nav-item header-contact">
                   <a href="tel:+73472163015" className="phone-number nav-link">

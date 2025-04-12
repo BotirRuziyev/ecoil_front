@@ -760,6 +760,9 @@
 .header-in .header-bottom .header-nav .header-contact .phone-number {
   text-align: left;
 }
+.header-in .header-bottom .burger-btn {
+  display: none;
+}
 .header.inner-pages__header::after {
   background-color: #fff;
 }
