@@ -84,14 +84,33 @@
                         border-color: #313a66;
                     }
                 }
-                .check-icon {
-                    font-family: var(--third-family);
-                    font-weight: 400;
-                    font-size: 16px;
-                    line-height: 130%;
-                    color: #000;
+                .check-input {
+                    &:checked {
+                    }
                     @include respond-to(phone) {
                         font-size: 14px;
+                    }
+                    input {
+                        display: none;
+                        &:checked + .checkbox-icon {
+                            background-color: #94d227;
+                            border-color: #94d227;
+                        }
+                    }
+                    .checkbox-icon {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 24px;
+                        height: 24px;
+                        border: 1px solid #000;
+                        border-radius: 5px;
+                        user-select: none;
+                        cursor: pointer;
+                        img {
+                            height: 15px;
+                            width: 15px;
+                        }
                     }
                 }
                 .select-container {

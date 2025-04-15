@@ -3,6 +3,7 @@ import "./css/news.css";
 import { Link } from "react-router-dom";
 import add from "@/assets/img/icons/add.svg";
 import uploadImg from "@/assets/img/upload-img.png";
+import check from "@/assets/img/icons/check-mark.png";
 
 const DashboardNewsEdit = () => {
   return (
@@ -26,13 +27,23 @@ const DashboardNewsEdit = () => {
               <label htmlFor="#" className="label">
                 Отображать на главной странице
               </label>
-              <span className="check-icon">✅</span>
+              <label htmlFor="checkbox" className="check-input">
+                <input type="checkbox" id="checkbox" />
+                <span className="checkbox-icon">
+                  <img src={check} alt="" />
+                </span>
+              </label>
             </div>
             <div className="form-control">
               <label htmlFor="#" className="label">
                 Активность
               </label>
-              <span className="check-icon">✅</span>
+              <label htmlFor="activity" className="check-input">
+                <input type="checkbox" id="activity" />
+                <span className="checkbox-icon">
+                  <img src={check} alt="" />
+                </span>
+              </label>
             </div>
             <div className="form-control">
               <label htmlFor="#" className="label">

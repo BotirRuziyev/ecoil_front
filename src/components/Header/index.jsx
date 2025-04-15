@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import logo from "@/assets/img/icons/logo.svg";
 import logoBlue from "@/assets/img/icons/logo-blue.svg";
 import arrow from "@/assets/img/icons/dropdown-arrow.svg";
@@ -15,6 +15,20 @@ const Header = ({ addClass, setOpenBar, isOpenBar }) => {
   const [navOpen, setNav] = useState(false);
   const [searchOpen, setSearch] = useState(false);
   const searchRef = useRef(null);
+  const navigate = useNavigate();
+
+  const ContactClick = () => {
+    if (window.location.pathname !== "/") {
+      navigate("/");
+    }
+
+    setTimeout(() => {
+      const contactSection = document.getElementById("contact");
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 100);
+  };
   const openMenu = () => {
     setNav(!navOpen);
   };
@@ -43,7 +57,6 @@ const Header = ({ addClass, setOpenBar, isOpenBar }) => {
       document.body.style.overflow = "visible";
     };
   }, [navOpen, isOpenBar]);
-
   useEffect(() => {
     document.addEventListener("mousedown", clickOutside);
 
@@ -230,23 +243,27 @@ const Header = ({ addClass, setOpenBar, isOpenBar }) => {
                     Продукция
                   </Link>
                 </li>
-                <li className="nav-item">
+                <li className="nav-item" onClick={openMenu}>
                   <Link to={"#"} className="nav-link">
                     Каталические системы
                   </Link>
                 </li>
-                <li className="nav-item">
+                <li className="nav-item" onClick={openMenu}>
                   <Link to={"#"} className="nav-link">
                     Документы
                   </Link>
                 </li>
-                <li className="nav-item">
+                <li className="nav-item" onClick={openMenu}>
                   <Link to={"#"} className="nav-link">
                     Регистрация
                   </Link>
                 </li>
-                <li className="nav-item">
-                  <a href={"#contact"} className="nav-link">
+                <li className="nav-item" onClick={openMenu}>
+                  <a
+                    href={"#contact"}
+                    className="nav-link"
+                    onClick={ContactClick}
+                  >
                     Контакты
                   </a>
                 </li>

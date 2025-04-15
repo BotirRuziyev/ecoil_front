@@ -66,7 +66,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section className="about-company">
+      <section id="about" className="about-company">
         <div className="main-container">
           <div className="about-company__in">
             <ul className="about-company__cards">
@@ -134,7 +134,7 @@ const Home = () => {
                   РП-ПС-1 (марки-В1, В2, В3, В4, В5) <br /> ПАВ М100 (марки-А и
                   Б) <br /> РП-ЭСК-1К
                 </p>
-                <Button text="Смотреть все" />
+                <Button text="Смотреть все" to="/product" />
               </li>
               <li className="card-item">
                 <h3 className="card-title">
@@ -155,12 +155,12 @@ const Home = () => {
                   РП-ИНПАР-1 (марка-Б)
                   <br />
                 </p>
-                <Button text="Смотреть все" />
+                <Button text="Смотреть все" to="/product" />
               </li>
               <li className="card-item">
                 <h3 className="card-title">Буровые реагенты</h3>
                 <p className="card-description">РП-ПС-1 (марка-А1)</p>
-                <Button text="Смотреть все" />
+                <Button text="Смотреть все" to="/product" />
               </li>
             </ul>
           </section>

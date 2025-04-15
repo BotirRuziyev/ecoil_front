@@ -1,10 +1,24 @@
 import React from "react";
 import "./css/footer.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "@/assets/img/icons/logo.svg";
 import virtek from "@/assets/img/icons/virtek.svg";
 
 const Footer = () => {
+  const navigate = useNavigate();
+
+  const ContactClick = () => {
+    if (window.location.pathname !== "/") {
+      navigate("/");
+    }
+
+    setTimeout(() => {
+      const contactSection = document.getElementById("contact");
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 100);
+  };
   return (
     <footer className="footer">
       <div className="main-container">
@@ -23,7 +37,7 @@ const Footer = () => {
                 <Link to="/product" className="nav-link">
                   Продукция
                 </Link>
-                <a href="#contact" className="nav-link">
+                <a href="#contact" className="nav-link" onClick={ContactClick}>
                   Контакты
                 </a>
               </li>

@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./css/dashboard-header.css";
 
 import burger from "@/assets/img/icons/burger-menu.svg";
 
 const DashboardHeader = () => {
+  const navigate = useNavigate();
+
   const [isOpen, setOpen] = useState(false);
   const burgerToggle = () => {
     setOpen(!isOpen);
@@ -20,6 +22,32 @@ const DashboardHeader = () => {
       document.body.style.overflow = "visible";
     };
   }, [isOpen]);
+  const ContactClick = () => {
+    if (window.location.pathname !== "/") {
+      navigate("/");
+    }
+
+    setTimeout(() => {
+      const contactSection = document.getElementById("contact");
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 100);
+  };
+  const AboutClick = () => {
+    if (window.location.pathname !== "/") {
+      navigate("/");
+    }
+
+    setTimeout(() => {
+      const aboutSection = document.getElementById("about");
+      if (aboutSection) {
+        aboutSection.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 100);
+  };
+  const location = useLocation();
+  const isNews = location.pathname.startsWith("/dashboard/news");
   return (
     <div className="dashboard-header">
       <div className="main-container">
@@ -28,29 +56,33 @@ const DashboardHeader = () => {
           <nav className={"dashboard-header__nav " + (isOpen ? "show" : "")}>
             <ul className="nav-list">
               <li className="list-item">
-                <Link to="#" className="nav-link">
+                <a href="#about" className="nav-link" onClick={AboutClick}>
                   О нас
-                </Link>
+                </a>
               </li>
               <li className="list-item">
-                <Link to="#" className="nav-link">
+                <Link to="/services" className="nav-link">
                   Услуги
                 </Link>
               </li>
+              {!isNews && (
+                <li className="list-item">
+                  <Link to="/dashboard/news" className="nav-link">
+                    Новости
+                  </Link>
+                </li>
+              )}
+              {!isNews && (
+                <li className="list-item">
+                  <Link to="#" className="nav-link">
+                    Медия
+                  </Link>
+                </li>
+              )}
               <li className="list-item">
-                <Link to="#" className="nav-link">
-                  Новости
-                </Link>
-              </li>
-              <li className="list-item">
-                <Link to="#" className="nav-link">
-                  Медия
-                </Link>
-              </li>
-              <li className="list-item">
-                <Link to="#" className="nav-link">
+                <a href="#" className="nav-link" onClick={ContactClick}>
                   Контакты
-                </Link>
+                </a>
               </li>
               <li className="list-item mobile-item">
                 <Link to={"/"} className="nav-link">

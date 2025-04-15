@@ -112,19 +112,39 @@
   outline: 0;
   border-color: #313a66;
 }
-.dashboard-news__form .form .form-control .check-icon,
-.dashboard-news__edit__form .form .form-control .check-icon {
-  font-family: var(--third-family);
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 130%;
-  color: #000;
-}
 @media (max-width: 576px) {
-  .dashboard-news__form .form .form-control .check-icon,
-  .dashboard-news__edit__form .form .form-control .check-icon {
+  .dashboard-news__form .form .form-control .check-input,
+  .dashboard-news__edit__form .form .form-control .check-input {
     font-size: 14px;
   }
+}
+.dashboard-news__form .form .form-control .check-input input,
+.dashboard-news__edit__form .form .form-control .check-input input {
+  display: none;
+}
+.dashboard-news__form .form .form-control .check-input input:checked + .checkbox-icon,
+.dashboard-news__edit__form .form .form-control .check-input input:checked + .checkbox-icon {
+  background-color: #94d227;
+  border-color: #94d227;
+}
+.dashboard-news__form .form .form-control .check-input .checkbox-icon,
+.dashboard-news__edit__form .form .form-control .check-input .checkbox-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  cursor: pointer;
+}
+.dashboard-news__form .form .form-control .check-input .checkbox-icon img,
+.dashboard-news__edit__form .form .form-control .check-input .checkbox-icon img {
+  height: 15px;
+  width: 15px;
 }
 .dashboard-news__form .form .form-control .select-container,
 .dashboard-news__edit__form .form .form-control .select-container {
