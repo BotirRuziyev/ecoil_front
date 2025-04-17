@@ -4,9 +4,9 @@
     padding-bottom: 115px;
     border-left: 1px solid #002269;
     @include respond-to(large) {
-        padding-bottom: 210px;
         border: 0;
         padding: 0;
+        padding-bottom: 210px;
     }
     @include respond-to(tablet) {
         padding-bottom: 190px;

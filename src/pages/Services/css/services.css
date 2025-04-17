@@ -5,9 +5,9 @@
 }
 @media (max-width: 1024px) {
   .services-page {
-    padding-bottom: 210px;
     border: 0;
     padding: 0;
+    padding-bottom: 210px;
   }
 }
 @media (max-width: 768px) {

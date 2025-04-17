@@ -31,6 +31,11 @@ html {
 body {
   background: #fff;
 }
+@media (max-width: 992px) {
+  body.hide {
+    overflow: hidden !important;
+  }
+}
 
 .app-container {
   min-height: 100vh;

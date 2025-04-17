@@ -36,6 +36,11 @@
   transform: translateY(100px);
   transition: 0.3s;
 }
+@media (max-width: 992px) {
+  .contact-modal .modal-content {
+    max-height: calc(100% - 30px);
+  }
+}
 @media (max-width: 576px) {
   .contact-modal .modal-content {
     max-height: calc(100% - 20px);

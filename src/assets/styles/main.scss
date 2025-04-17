@@ -28,6 +28,11 @@ html {
 }
 body {
     background: #fff;
+    &.hide {
+        @include respond-to(desktop) {
+            overflow: hidden !important;
+        }
+    }
 }
 .app-container {
     min-height: 100vh;

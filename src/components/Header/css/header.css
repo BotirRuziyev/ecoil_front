@@ -546,6 +546,7 @@
     max-width: 100%;
     width: 100%;
     height: calc(100vh - 100px);
+    overflow-y: auto;
     background-color: rgba(0, 0, 0, 0);
     -webkit-backdrop-filter: blur(20px);
             backdrop-filter: blur(20px);
@@ -584,6 +585,14 @@
     align-items: start;
   }
 }
+@media (max-width: 992px) {
+  .header-in .header-bottom .header-nav .nav-list .list-item {
+    width: 100%;
+  }
+  .header-in .header-bottom .header-nav .nav-list .list-item:first-child .dropdown .dropdown-menu {
+    overflow-y: hidden;
+  }
+}
 .header-in .header-bottom .header-nav .nav-list .header-contact {
   display: none;
 }
@@ -610,7 +619,7 @@
 }
 @media (max-width: 992px) {
   .header-in .header-bottom .header-nav .nav-list .dropdown:hover .dropdown-menu {
-    height: 100%;
+    height: auto;
   }
 }
 .header-in .header-bottom .header-nav .nav-list .dropdown-btn {
@@ -661,22 +670,27 @@
   }
 }
 .header-in .header-bottom .header-nav .nav-list .dropdown .dropdown-menu {
-  width: auto;
+  width: 400px;
   min-width: 100%;
+  max-height: 50vh;
+  padding: 10px 0;
+  overflow-y: auto;
   border-radius: 10px;
   background-color: #fff;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
   position: absolute;
   top: calc(100% + 25px);
   left: 0;
   opacity: 0;
   visibility: hidden;
-  overflow: hidden;
+  overflow-x: hidden;
   transition: opacity 0.3s, top 0.3s, visibility 0.1s;
 }
 @media (max-width: 992px) {
   .header-in .header-bottom .header-nav .nav-list .dropdown .dropdown-menu {
+    width: 100%;
     height: 0;
-    overflow: hidden;
+    box-shadow: none;
     background-color: transparent;
     position: static;
     opacity: 1;
@@ -687,11 +701,11 @@
 }
 .header-in .header-bottom .header-nav .nav-list .dropdown .dropdown-menu .nav-link {
   display: block;
-  padding: 10px 20px;
-  white-space: nowrap;
+  padding: 5px 20px;
   font-family: var(--second-family);
-  font-weight: 500;
-  font-size: 18px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
   color: #000;
   transition: 0.2s;
 }
@@ -703,6 +717,7 @@
 @media (max-width: 992px) {
   .header-in .header-bottom .header-nav .nav-list .dropdown .dropdown-menu .nav-link {
     padding: 10px;
+    padding-bottom: 0;
     color: #fff;
   }
 }

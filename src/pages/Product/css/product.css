@@ -103,6 +103,12 @@
 .product-page .swiper-pagination {
   bottom: 13px;
   line-height: 0;
+  display: none;
+}
+@media (max-width: 1024px) {
+  .product-page .swiper-pagination {
+    display: block;
+  }
 }
 @media (max-width: 576px) {
   .product-page .swiper-pagination {

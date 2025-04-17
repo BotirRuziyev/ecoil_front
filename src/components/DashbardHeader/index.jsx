@@ -9,17 +9,19 @@ const DashboardHeader = () => {
 
   const [isOpen, setOpen] = useState(false);
   const burgerToggle = () => {
-    setOpen(!isOpen);
+    if (window.innerWidth <= 992) {
+      setOpen(!isOpen);
+    }
   };
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = "hidden";
+      document.body.classList.add("hide");
     } else {
-      document.body.style.overflow = "visible";
+      document.body.classList.remove("hide");
     }
 
     return () => {
-      document.body.style.overflow = "visible";
+      document.body.classList.remove("hide");
     };
   }, [isOpen]);
   const ContactClick = () => {
@@ -80,7 +82,7 @@ const DashboardHeader = () => {
                 </li>
               )}
               <li className="list-item">
-                <a href="#" className="nav-link" onClick={ContactClick}>
+                <a href="#contact" className="nav-link" onClick={ContactClick}>
                   Контакты
                 </a>
               </li>
