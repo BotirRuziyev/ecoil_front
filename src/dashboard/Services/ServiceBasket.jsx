@@ -7,7 +7,7 @@ const DocumentBasket = () => {
       <div className="main-container">
         <div className="dashboard-home__table">
           <div className="table-top">
-            <h1 className="basket-title">Ваша корзина услуг</h1>
+            <h1 className="basket-title">Ваша корзина услуги</h1>
           </div>
           <div className="table-wrapper">
             <table className="table">

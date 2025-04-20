@@ -7,7 +7,7 @@ const ServiceBasket = () => {
       <div className="main-container">
         <div className="dashboard-home__table">
           <div className="table-top">
-            <h1 className="basket-title">Ваша корзина услуг</h1>
+            <h1 className="basket-title">Ваша корзина документы</h1>
           </div>
           <div className="table-wrapper">
             <table className="table">
@@ -15,7 +15,7 @@ const ServiceBasket = () => {
                 <tr>
                   <td className="table-td">№</td>
                   <td className="table-td">дата</td>
-                  <td className="table-td">заголовок услуги</td>
+                  <td className="table-td">заголовок документы</td>
                   <td className="table-td">категория</td>
                   <td className="table-td">создано</td>
                   <td className="table-td">действия</td>
