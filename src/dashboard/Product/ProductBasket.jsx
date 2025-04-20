@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const ProductBasket = () => {
   return (
-    <div className="dashboard-services">
+    <div className="dashboard-page">
       <div className="main-container">
         <div className="dashboard-home__table">
           <div className="table-top">
