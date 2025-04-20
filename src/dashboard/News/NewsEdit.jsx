@@ -1,5 +1,5 @@
 import React from "react";
-import "./css/news.css";
+import "../Home/css/home.css";
 import { Link } from "react-router-dom";
 import add from "@/assets/img/icons/add.svg";
 import uploadImg from "@/assets/img/upload-img.png";
@@ -7,16 +7,16 @@ import check from "@/assets/img/icons/check-mark.png";
 
 const DashboardNewsEdit = () => {
   return (
-    <div className="dashboard-news__edit">
+    <div className="dashboard-page">
       <div className="main-container">
-        <div className="dashboard-news__head">
+        <div className="dashboard-page__head">
           <button className="article-edit__btn">Редактирование статьи</button>
           <Link to={"#"} className="back-list__link">
             Вернуться к списку
           </Link>
         </div>
         <div className="dashboard-news__form">
-          <form action="#" className="form">
+          <form action="#" className="dashboard-form">
             <div className="form-control">
               <label htmlFor="#" className="label">
                 Заголовок статьи

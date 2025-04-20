@@ -54,37 +54,47 @@ const DashboardHeader = () => {
     <div className="dashboard-header">
       <div className="main-container">
         <div className="dashboard-header__in">
-          <p className="logo">Админка</p>
+          <Link to={"/dashboard"} className="logo">
+            Админка
+          </Link>
           <nav className={"dashboard-header__nav " + (isOpen ? "show" : "")}>
             <ul className="nav-list">
-              <li className="list-item">
-                <a href="#about" className="nav-link" onClick={AboutClick}>
+              <li className="list-item" onClick={burgerToggle}>
+                <Link
+                  to="/dashboard/about"
+                  className="nav-link"
+                  onClick={AboutClick}
+                >
                   О нас
-                </a>
+                </Link>
               </li>
-              <li className="list-item">
-                <Link to="/services" className="nav-link">
+              <li className="list-item" onClick={burgerToggle}>
+                <Link to="/dashboard/services" className="nav-link">
                   Услуги
                 </Link>
               </li>
               {!isNews && (
-                <li className="list-item">
+                <li className="list-item" onClick={burgerToggle}>
                   <Link to="/dashboard/news" className="nav-link">
                     Новости
                   </Link>
                 </li>
               )}
               {!isNews && (
-                <li className="list-item">
+                <li className="list-item" onClick={burgerToggle}>
                   <Link to="#" className="nav-link">
                     Медия
                   </Link>
                 </li>
               )}
-              <li className="list-item">
-                <a href="#contact" className="nav-link" onClick={ContactClick}>
+              <li className="list-item" onClick={burgerToggle}>
+                <Link
+                  to="/dashboard/contact"
+                  className="nav-link"
+                  onClick={ContactClick}
+                >
                   Контакты
-                </a>
+                </Link>
               </li>
               <li className="list-item mobile-item">
                 <Link to={"/"} className="nav-link">

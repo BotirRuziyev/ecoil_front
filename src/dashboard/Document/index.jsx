@@ -1,16 +1,14 @@
 import React from "react";
-import "./css/home.css";
+import "../Home/css/home.css";
 import settingsIcon from "@/assets/img/icons/settings.svg";
 import { Link } from "react-router-dom";
-
-const DashboardHome = () => {
+const DashboardDocument = () => {
   return (
     <div className="dashboard-page">
       <div className="main-container">
         <div className="dashboard-home__table">
           <div className="table-top">
-            <button className="article-btn">Статья</button>
-            <Link to={"/dashboard/news"} className="add-btn">
+            <Link to={"/dashboard/service/add"} className="add-btn">
               <span className="setting-icon">
                 <img src={settingsIcon} alt="" />
               </span>
@@ -23,8 +21,8 @@ const DashboardHome = () => {
                 <tr>
                   <td className="table-td">№</td>
                   <td className="table-td">дата</td>
-                  <td className="table-td">заголовок новости</td>
-                  <td className="table-td">главная</td>
+                  <td className="table-td">заголовок документы</td>
+                  <td className="table-td">документы</td>
                   <td className="table-td">категория</td>
                   <td className="table-td">создано</td>
                   <td className="table-td">статус</td>
@@ -45,7 +43,10 @@ const DashboardHome = () => {
                   <td className="table-td">✅</td>
                   <td className="table-td actions-td">
                     <div className="actions-td__in">
-                      <button className="setting-btn">
+                      <Link
+                        to={"/dashboard/service/edit"}
+                        className="setting-btn"
+                      >
                         <svg
                           width="13"
                           height="13"
@@ -59,7 +60,7 @@ const DashboardHome = () => {
                             fillOpacity="0.5"
                           />
                         </svg>
-                      </button>
+                      </Link>
                       <button className="visibility-btn">
                         <svg
                           width="15"
@@ -106,7 +107,10 @@ const DashboardHome = () => {
                   <td className="table-td">✅</td>
                   <td className="table-td actions-td">
                     <div className="actions-td__in">
-                      <button className="setting-btn">
+                      <Link
+                        to={"/dashboard/service/edit"}
+                        className="setting-btn"
+                      >
                         <svg
                           width="13"
                           height="13"
@@ -120,7 +124,7 @@ const DashboardHome = () => {
                             fillOpacity="0.5"
                           />
                         </svg>
-                      </button>
+                      </Link>
                       <button className="visibility-btn">
                         <svg
                           width="15"
@@ -167,7 +171,10 @@ const DashboardHome = () => {
                   <td className="table-td">✅</td>
                   <td className="table-td actions-td">
                     <div className="actions-td__in">
-                      <button className="setting-btn">
+                      <Link
+                        to={"/dashboard/service/edit"}
+                        className="setting-btn"
+                      >
                         <svg
                           width="13"
                           height="13"
@@ -181,7 +188,7 @@ const DashboardHome = () => {
                             fillOpacity="0.5"
                           />
                         </svg>
-                      </button>
+                      </Link>
                       <button className="visibility-btn">
                         <svg
                           width="15"
@@ -228,7 +235,10 @@ const DashboardHome = () => {
                   <td className="table-td">✅</td>
                   <td className="table-td actions-td">
                     <div className="actions-td__in">
-                      <button className="setting-btn">
+                      <Link
+                        to={"/dashboard/service/edit"}
+                        className="setting-btn"
+                      >
                         <svg
                           width="13"
                           height="13"
@@ -242,7 +252,7 @@ const DashboardHome = () => {
                             fillOpacity="0.5"
                           />
                         </svg>
-                      </button>
+                      </Link>
                       <button className="visibility-btn">
                         <svg
                           width="15"
@@ -289,7 +299,10 @@ const DashboardHome = () => {
                   <td className="table-td">✅</td>
                   <td className="table-td actions-td">
                     <div className="actions-td__in">
-                      <button className="setting-btn">
+                      <Link
+                        to={"/dashboard/service/edit"}
+                        className="setting-btn"
+                      >
                         <svg
                           width="13"
                           height="13"
@@ -303,7 +316,7 @@ const DashboardHome = () => {
                             fillOpacity="0.5"
                           />
                         </svg>
-                      </button>
+                      </Link>
                       <button className="visibility-btn">
                         <svg
                           width="15"
@@ -346,4 +359,4 @@ const DashboardHome = () => {
   );
 };
 
-export default DashboardHome;
+export default DashboardDocument;

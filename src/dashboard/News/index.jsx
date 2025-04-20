@@ -1,18 +1,18 @@
 import React from "react";
-import "./css/news.css";
+import "../Home/css/home.css";
 import upload from "@/assets/img/icons/upload.svg";
 import add from "@/assets/img/icons/add.svg";
 import check from "@/assets/img/icons/check-mark.png";
 
 const DashboardNews = () => {
   return (
-    <div className="dashboard-news">
+    <div className="dashboard-page">
       <div className="main-container">
-        <div className="dashboard-news__head">
+        <div className="dashboard-page__head">
           <button className="article-btn">Статья</button>
         </div>
         <div className="dashboard-news__form">
-          <form action="#" className="form">
+          <form action="#" className="dashboard-form">
             <div className="form-control">
               <label htmlFor="#" className="label">
                 Заголовок статьи
