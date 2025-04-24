@@ -25,11 +25,15 @@ import DashboardDocument from "./dashboard/Document";
 import DashboardDocumentAdd from "./dashboard/Document/DocumentAdd";
 import DashboardDocumentEdit from "./dashboard/Document/DocumentEdit";
 import DocumentBasket from "./dashboard/Document/DocumentBasket";
+import Login from "./dashboard/auth/Login";
+import Register from "./dashboard/Auth/Register";
 
 function App() {
   const [isOpenBar, setOpenBar] = useState(false);
   const location = useLocation();
   const isDashboard = location.pathname.startsWith("/dashboard");
+  const login = location.pathname.startsWith("/dashboard/login");
+  const register = location.pathname.startsWith("/dashboard/register");
 
   return (
     <div className="app-container">
@@ -40,7 +44,7 @@ function App() {
           isOpenBar={isOpenBar}
         />
       )}
-      {isDashboard && <DashboardHeader />}
+      {isDashboard && !login && !register && <DashboardHeader />}
       <main
         className={
           "main-content " +
@@ -56,6 +60,8 @@ function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/product" element={<Product />} />
           <Route path="/product/:slug" element={<ProductDetail />} />
+          <Route path="/dashboard/login" element={<Login />} />
+          <Route path="/dashboard/register" element={<Register />} />
           <Route path="/dashboard" element={<DashboardHome />} />
           <Route path="/dashboard/about" element={<DashboardAbout />} />
           <Route path="/dashboard/services" element={<DashboardServices />} />
