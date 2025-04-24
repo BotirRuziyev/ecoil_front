@@ -25,8 +25,8 @@ import DashboardDocument from "./dashboard/Document";
 import DashboardDocumentAdd from "./dashboard/Document/DocumentAdd";
 import DashboardDocumentEdit from "./dashboard/Document/DocumentEdit";
 import DocumentBasket from "./dashboard/Document/DocumentBasket";
-import Login from "./dashboard/auth/Login";
 import Register from "./dashboard/Auth/Register";
+import Login from "./dashboard/Auth/Login";
 
 function App() {
   const [isOpenBar, setOpenBar] = useState(false);
