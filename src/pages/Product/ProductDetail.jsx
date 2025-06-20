@@ -58,7 +58,8 @@ const ProductDetail = () => {
     },
     {
       id: 13,
-      title: "Солевыесоставыдляглушенияскважинплотностью от 1100-2350г/см3",
+      title:
+        "Солевые составы для глушения скважин плотностью от 1100-2350г/см3",
     },
     {
       id: 14,
@@ -75,7 +76,7 @@ const ProductDetail = () => {
           return (
             <li key={product.id} className="product-info__item">
               <h3 className="product-title">{product.title}</h3>
-              {product.description || product.grade ? (
+              {/* {product.description || product.grade ? (
                 <div className="product-info__body">
                   <div className="product-info__body-in">
                     <p className="product-description">{product.description}</p>
@@ -84,7 +85,8 @@ const ProductDetail = () => {
                 </div>
               ) : (
                 ""
-              )}
+              )
+              } */}
             </li>
           );
         })}

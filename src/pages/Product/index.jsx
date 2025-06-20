@@ -7,14 +7,25 @@ import { Navigation, Pagination } from "swiper/modules";
 import "./css/product.css";
 import Button from "../../components/Button";
 
-import bezymyannyy from "@/assets/img/bezymyannyy.png";
-import emulgator from "@/assets/img/emulgator.png";
-import ikk from "@/assets/img/ikk.png";
-import inparr from "@/assets/img/inparr.png";
+import bezymyannyy from "@/assets/img/bezymyannyy.webp";
+import emulgator from "@/assets/img/emulgator.webp";
+import ikk from "@/assets/img/ikk.webp";
+import inparr from "@/assets/img/inparr.webp";
 import ContactModal from "../../components/ContactModal";
+
+// Lightbox
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
+
+import Download from "yet-another-react-lightbox/plugins/download";
+import Zoom from "yet-another-react-lightbox/plugins/zoom"; // ✅ faqat shu kerak
+import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
 
 const Product = () => {
   const [isOpen, setModal] = useState(false);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
+
   const products = [
     {
       id: 1,
@@ -168,39 +179,32 @@ const Product = () => {
       ],
     },
   ];
+
   const certificates = [
-    {
-      id: 1,
-      img: bezymyannyy,
-    },
-    {
-      id: 2,
-      img: emulgator,
-    },
-    {
-      id: 3,
-      img: ikk,
-    },
-    {
-      id: 4,
-      img: inparr,
-    },
-    {
-      id: 5,
-      img: emulgator,
-    },
+    { id: 1, img: bezymyannyy },
+    { id: 2, img: emulgator },
+    { id: 3, img: ikk },
+    { id: 4, img: inparr },
+    { id: 5, img: emulgator },
   ];
+
+  const slides = certificates.map((item) => ({
+    src: item.img,
+  }));
+
   return (
     <div className="product-page">
       <div className="page-head">
         <Link to={"/"} className="page-head__link">
           Главная
-        </Link>
-        /<p className="text">Услуги</p>
+        </Link>{" "}
+        / <p className="text">Услуги</p>
       </div>
+
       <div className="product-page__header">
         <h1 className="page-title">Продукция</h1>
       </div>
+
       <div className="product-wrapper">
         <Swiper
           modules={[Pagination]}
@@ -216,28 +220,25 @@ const Product = () => {
           }}
           className="product-list"
         >
-          {products.map((product) => {
-            return (
-              <SwiperSlide key={product.id} className="card-item">
-                <div className="card-body">
-                  <h3 className="card-title">{product.title}</h3>
-                  <ul className="product-links">
-                    {product.productLinks.map((link) => {
-                      return (
-                        <li key={link._id} className="link-item">
-                          <Link to={link.to} className="product-link">
-                            {link.text}
-                          </Link>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </div>
-                <Button text="подробнее" to={product.to} />
-              </SwiperSlide>
-            );
-          })}
+          {products.map((product) => (
+            <SwiperSlide key={product.id} className="card-item">
+              <div className="card-body">
+                <h3 className="card-title">{product.title}</h3>
+                <ul className="product-links">
+                  {product.productLinks.map((link) => (
+                    <li key={link._id} className="link-item">
+                      <Link to={link.to} className="product-link">
+                        {link.text}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <Button text="подробнее" to={product.to} />
+            </SwiperSlide>
+          ))}
         </Swiper>
+
         <button className="contact-us-btn" onClick={() => setModal(true)}>
           <span>Связаться с нами</span>
           <span className="arrow-icon">
@@ -256,6 +257,7 @@ const Product = () => {
           </span>
         </button>
       </div>
+
       <div className="certificates">
         <h2 className="certificates-title">сертификаты</h2>
         <div className="swiper-container">
@@ -278,13 +280,19 @@ const Product = () => {
             loop={true}
             className="certificates-slider"
           >
-            {certificates.map((item) => {
-              return (
-                <SwiperSlide key={item.id}>
-                  <img src={item.img} alt="" />
-                </SwiperSlide>
-              );
-            })}
+            {certificates.map((item, index) => (
+              <SwiperSlide key={item.id}>
+                <img
+                  src={item.img}
+                  alt=""
+                  onClick={() => {
+                    setLightboxIndex(index);
+                    setLightboxOpen(true);
+                  }}
+                  style={{ cursor: "pointer" }}
+                />
+              </SwiperSlide>
+            ))}
           </Swiper>
           <div className="swiper-button-next">
             <svg
@@ -310,6 +318,16 @@ const Product = () => {
           </div>
         </div>
       </div>
+
+      {/* Lightbox */}
+      <Lightbox
+        open={lightboxOpen}
+        close={() => setLightboxOpen(false)}
+        index={lightboxIndex}
+        slides={slides}
+        plugins={[Download, Zoom, Fullscreen]}
+      />
+
       <ContactModal isOpen={isOpen} close={() => setModal(false)} />
     </div>
   );

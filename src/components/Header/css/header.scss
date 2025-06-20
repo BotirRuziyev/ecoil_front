@@ -51,6 +51,10 @@
                 border-radius: 28px;
                 padding: 0 10px;
                 transition: 0.2s;
+                @include respond-to(large) {
+                    max-width: 185px;
+                    min-width: 185px;
+                }
                 &:focus-within {
                     border-color: #007dfe;
                     .search-btn {
@@ -81,7 +85,7 @@
                     font-size: 16px;
                     line-height: 120%;
                     color: #fff;
-                    @media (max-width: 1300px) {
+                    @media (max-width: 1400px) {
                         padding: 6px 0;
                     }
                     &:focus {
@@ -138,7 +142,7 @@
                 @include respond-to(phone) {
                     gap: 0;
                 }
-                @media (max-width: 1300px) {
+                @media (max-width: 1400px) {
                     gap: 14px;
                 }
                 .logo {
@@ -146,7 +150,7 @@
                         display: block;
                     }
                     img {
-                        @media (max-width: 1300px) {
+                        @media (max-width: 1400px) {
                             width: 165px;
                         }
                         @include respond-to(phone) {
@@ -162,7 +166,7 @@
                     line-height: 150%;
                     letter-spacing: 0.02em;
                     color: #fff;
-                    @media (max-width: 1300px) {
+                    @media (max-width: 1400px) {
                         max-width: 145px;
                         font-size: 12px;
                         line-height: 97%;
@@ -175,7 +179,7 @@
             .header-right__block {
                 @include flex-center;
                 gap: 14px;
-                @media (max-width: 1300px) {
+                @media (max-width: 1400px) {
                     gap: 10px;
                 }
                 @include respond-to(phone) {
@@ -267,7 +271,7 @@
                     font-size: 16px;
                     color: #fff;
                     transition: 0.2s;
-                    @media (max-width: 1300px) {
+                    @media (max-width: 1400px) {
                         width: 187px;
                         padding: 6px 0;
                         gap: 8px;
@@ -459,12 +463,15 @@
         .header-bottom {
             @include flex-between;
             gap: 20px;
+            @include respond-to(large) {
+                gap: 8px;
+            }
             .header-nav {
                 max-width: 1200px;
                 width: 100%;
 
-                @media (max-width: 1300px) {
-                    max-width: 768px;
+                @media (max-width: 1400px) {
+                    max-width: 850px;
                 }
                 @include respond-to(desktop) {
                     max-width: 100%;
@@ -551,9 +558,13 @@
                             &.active {
                                 font-weight: 700;
                             }
-                            @media (max-width: 1300px) {
+                            @media (max-width: 1400px) {
                                 font-size: 16px;
+                                font-weight: 500;
                                 gap: 5px;
+                                &.active {
+                                    font-weight: 500;
+                                }
                             }
                             @include respond-to(phone) {
                                 gap: 10px;
@@ -622,7 +633,7 @@
                                 line-height: 100%;
                                 color: #000;
                                 transition: 0.2s;
-                                @media (max-width: 1300px) {
+                                @media (max-width: 1400px) {
                                     font-size: 16px;
                                 }
                                 @include respond-to(desktop) {
@@ -661,8 +672,9 @@
                             color: #007dfe;
                             border-color: #007dfe;
                         }
-                        @media (max-width: 1300px) {
+                        @media (max-width: 1400px) {
                             font-size: 16px;
+                            font-weight: 500;
                         }
                         @include respond-to(phone) {
                             font-size: 14px;
@@ -875,7 +887,7 @@
                     @media (max-width: 1500px) {
                         max-width: 1200px;
                     }
-                    @media (max-width: 1300px) {
+                    @media (max-width: 1400px) {
                         max-width: 1000px;
                     }
                     .nav-list {

@@ -183,6 +183,11 @@ const Header = ({ addClass, setOpenBar, isOpenBar }) => {
             <div className="header-bottom">
               <nav className={"header-nav " + (navOpen ? "show" : "")}>
                 <ul className="nav-list">
+                  <li className="nav-item" onClick={openMenu}>
+                    <Link to={"/"} className="nav-link">
+                      Главная
+                    </Link>
+                  </li>
                   <li className="list-item">
                     <div className="dropdown">
                       <button
